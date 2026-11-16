@@ -1555,3 +1555,437 @@ blockquote {
 .scene-art .middle-land {
   translate: 0 calc(var(--parallax, 0px) * 0.35);
 }
+
+/* Field notes: the same illustrated world, with clearer evidence inside. */
+.profile-essentials {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+.profile-essentials .actions {
+  margin: 18px 0 8px;
+  gap: 14px 24px;
+}
+.profile-essentials .primary {
+  padding: 10px 18px;
+  font-size: 14px;
+}
+.profile-essentials .contact-links {
+  align-items: center;
+  gap: 6px 22px;
+}
+.profile-essentials .text-button {
+  margin: 0;
+  font-size: 13px;
+}
+#profile-dialog {
+  width: min(700px, calc(100% - 28px));
+}
+#profile-dialog h2 {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+#profile-dialog .profile-intro {
+  gap: 16px;
+}
+#profile-dialog .profile-intro img {
+  width: 64px;
+  height: 78px;
+}
+#profile-dialog .current-role {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+#profile-dialog .quick-facts {
+  margin: 18px 0 12px;
+  border-top: 0;
+}
+#profile-dialog .quick-facts p {
+  margin: 0 0 14px;
+}
+#profile-dialog .profile-positioning {
+  margin: 10px 0;
+}
+#profile-dialog .tags {
+  margin: 12px 0;
+}
+#profile-dialog .security-summary {
+  font-size: 13px;
+  margin: 10px 0;
+}
+.profile-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+.profile-shortcuts .ink-link {
+  font-size: 13px;
+}
+.profile-email {
+  display: inline-block;
+  margin-top: 16px;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+.current-milestone .landmark-label {
+  border-color: var(--scene-red);
+}
+.career-town .landmark-caption {
+  max-width: 210px;
+}
+.copy-feedback {
+  overflow-wrap: anywhere;
+}
+.copy-feedback:empty {
+  display: none;
+}
+.dialog-head {
+  position: sticky;
+  top: -30px;
+  background: var(--scene-paper);
+  z-index: 2;
+  padding-block: 6px;
+}
+.evidence-trail {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 20px;
+}
+.evidence-trail li {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding: 0 0 26px;
+}
+.evidence-trail li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  top: 35px;
+  bottom: 0;
+  left: 17px;
+  background: var(--border);
+}
+.evidence-number {
+  flex: 0 0 35px;
+  height: 35px;
+  border: 1px solid var(--scene-blue);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--scene-blue);
+  font:
+    11px ui-monospace,
+    monospace;
+}
+.evidence-trail h3 {
+  margin: 4px 0 8px;
+  font-size: 19px;
+}
+.evidence-trail p {
+  margin: 0;
+}
+dialog .evidence-note {
+  font-size: 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--scene-red);
+}
+.source-trail {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.source-trail .ink-link {
+  font-size: 13px;
+  text-align: left;
+}
+.architecture-links {
+  margin: 28px 0 18px;
+}
+.architecture-entry {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  align-items: center;
+  text-align: left;
+  border: 0;
+  border-block: 1px solid var(--border);
+  padding: 20px 0;
+  background: none;
+  font-size: 17px;
+}
+.architecture-entry:hover {
+  color: var(--scene-red);
+}
+.architecture-entry small {
+  display: block;
+  font:
+    11px/1.7 ui-monospace,
+    monospace;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.architecture-entry > span:last-child {
+  margin-left: auto;
+}
+.architecture-symbol {
+  color: var(--scene-blue);
+  font-size: 34px;
+}
+.system-map {
+  display: flex;
+  position: relative;
+  gap: 12px;
+  align-items: stretch;
+  margin: 24px 0;
+}
+.system-node {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 4px 15px 4px 15px;
+  background: var(--scene-paper);
+  padding: 12px 9px 14px;
+  text-align: center;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.system-node svg {
+  display: block;
+  width: 64px;
+  height: 48px;
+  margin: 0 auto 6px;
+  fill: var(--scene-far);
+  stroke: var(--scene-blue);
+  stroke-width: 1.5;
+}
+.system-node .node-number {
+  display: block;
+  font:
+    10px ui-monospace,
+    monospace;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.system-node strong {
+  font-size: 12px;
+  line-height: 1.5;
+  display: block;
+}
+.system-node[aria-expanded="true"] {
+  border: 2px solid var(--scene-blue);
+  padding: 11px 8px 13px;
+  box-shadow: 3px 3px 0 var(--scene-far);
+}
+.system-node:hover {
+  transform: translateY(-3px);
+}
+.system-wire {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  height: 20px;
+  stroke: var(--scene-blue);
+  stroke-width: 2;
+  stroke-dasharray: 4 5;
+  overflow: visible;
+}
+.system-map:focus-within .system-wire,
+.system-map:hover .system-wire {
+  animation: signal 2s linear infinite;
+}
+@keyframes signal {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+.system-explanations {
+  border-left: 3px solid var(--scene-blue);
+  padding: 4px 0 4px 22px;
+  margin: 24px 0;
+}
+.system-explanation h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+.system-explanation p {
+  margin: 8px 0;
+}
+.system-explanation .node-tools {
+  color: var(--scene-blue);
+  font:
+    12px/1.7 ui-monospace,
+    monospace;
+}
+dialog .architecture-caption {
+  font-size: 12px;
+}
+.repository-note {
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+  margin-top: 24px;
+}
+.repository-note p {
+  margin: 6px 0;
+  font-size: 12px;
+}
+.repository-note .small {
+  font-size: 11px;
+}
+.guide-form {
+  margin: 24px 0;
+}
+.guide-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.guide-form > div {
+  display: flex;
+  gap: 12px;
+}
+.guide-form input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--scene-sky);
+  color: var(--text);
+  padding: 10px 12px;
+  width: 100%;
+}
+.guide-form input:focus-visible {
+  outline: 2px solid var(--scene-blue);
+  outline-offset: 3px;
+}
+.guide-form .primary {
+  font-size: 13px;
+  padding: 10px 16px;
+}
+.guide-form .small {
+  font-size: 12px;
+}
+.guide-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+.guide-suggestions .text-button {
+  font-size: 13px;
+}
+.guide-result {
+  border-top: 1px solid var(--border);
+  padding: 6px 0 18px;
+}
+.guide-result h3 {
+  font-size: 21px;
+}
+.guide-source {
+  text-align: left;
+}
+.guide-status {
+  font-size: 13px;
+}
+@media (max-width: 760px) {
+  #profile-dialog h2 {
+    font-size: 30px;
+  }
+  #profile-dialog .profile-intro .lead {
+    font-size: 15px;
+  }
+  #profile-dialog .profile-essentials .actions {
+    gap: 10px 18px;
+    font-size: 12px;
+  }
+  #profile-dialog .profile-essentials .primary {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+  #profile-dialog .profile-intro img {
+    width: 52px;
+    height: 64px;
+  }
+  #profile-dialog .quick-facts strong {
+    font-size: 28px;
+  }
+  #profile-dialog .quick-facts span {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .dialog-head {
+    top: -22px;
+  }
+  .system-map {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .system-node {
+    display: grid;
+    grid-template-columns: 44px 24px 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: left;
+    padding: 10px 14px;
+  }
+  .system-node[aria-expanded="true"] {
+    padding: 9px 13px;
+  }
+  .system-node svg {
+    width: 44px;
+    height: 34px;
+    margin: 0;
+  }
+  .system-node .node-number {
+    margin: 0;
+  }
+  .system-node strong {
+    font-size: 13px;
+  }
+  .system-wire {
+    display: none;
+  }
+  .system-flow::before {
+    content: "";
+    position: absolute;
+    left: 36px;
+    top: 0;
+    bottom: 0;
+    border-left: 1px dashed var(--scene-blue);
+  }
+  .system-explanations {
+    padding-left: 16px;
+  }
+  .evidence-trail li {
+    gap: 14px;
+  }
+  .evidence-trail h3 {
+    font-size: 17px;
+  }
+  .architecture-entry {
+    font-size: 15px;
+    gap: 10px;
+  }
+  .architecture-symbol {
+    font-size: 28px;
+  }
+  .guide-form > div {
+    flex-direction: column;
+  }
+  .guide-form .primary {
+    align-self: flex-start;
+  }
+}
+:root[data-motion="off"] .system-wire {
+  animation: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .system-wire {
+    animation: none !important;
+  }
+  .system-node {
+    transition: none;
+  }
+}

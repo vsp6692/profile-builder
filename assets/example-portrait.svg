@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" role="img" aria-labelledby="title desc">
+  <title id="title">Example profile illustration</title>
+  <desc id="desc">A neutral blue silhouette on a warm paper background. Replace it with your own portrait.</desc>
+  <rect width="120" height="150" rx="12" fill="#f8f2e8"/>
+  <circle cx="60" cy="55" r="26" fill="#b7cbdc"/>
+  <path d="M18 135v-16c0-26 19-43 42-43s42 17 42 43v16" fill="#416b94"/>
+  <path d="M30 135h60" stroke="#b64c3f" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -49,14 +49,14 @@
     ],
     "defaultProjectArt": "studio",
     "projectArt": {
-      "SecretMesh": "vault",
-      "WalkMate": "compass",
-      "Explore Around You": "map",
-      "Cost OS Dashboard": "chart",
-      "LitOverLap": "library",
-      "Tiny Seeds Playschool": "school",
-      "This profile": "terminal",
-      "Preview environments": "lab"
+      "walkmate": "compass",
+      "explore-around-you": "map",
+      "cost-os": "chart",
+      "literature-overlap": "library",
+      "secretmesh": "vault",
+      "tiny-seeds": "school",
+      "profile-builder": "terminal",
+      "preview-environments": "lab"
     },
     "palette": {
       "light": {
@@ -134,6 +134,10 @@
         "description": "Multi-cloud engineering across AWS, Azure, and GCP.",
         "categories": [
           "Cloud Platforms"
+        ],
+        "id": "clouds",
+        "architectureIds": [
+          "literature-platform"
         ]
       },
       {
@@ -145,6 +149,10 @@
           "Kubernetes & Containers",
           "CI/CD & GitOps",
           "Platform Engineering"
+        ],
+        "id": "platform",
+        "architectureIds": [
+          "developer-platform"
         ]
       },
       {
@@ -154,6 +162,10 @@
         "description": "Security and governance are part of the engineering workflow.",
         "categories": [
           "DevSecOps & Security"
+        ],
+        "id": "security",
+        "architectureIds": [
+          "secretmesh-architecture"
         ]
       },
       {
@@ -163,8 +175,23 @@
         "description": "Observability helps teams understand the systems they operate.",
         "categories": [
           "Observability"
-        ]
+        ],
+        "id": "observability",
+        "architectureIds": []
       }
     ]
+  },
+  "assistant": {
+    "enabled": false
+  },
+  "github": {
+    "enabled": true,
+    "repositories": [
+      "vsp6692/secretmesh",
+      "vsp6692/walkmate",
+      "vsp6692/explorearoundyou",
+      "vsp6692/profile-builder"
+    ],
+    "ttlHours": 24
   }
 }

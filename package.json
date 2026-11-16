@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "lint": "eslint scripts assets/app.js tests",
+    "lint": "eslint scripts assets/*.js tests",
     "typecheck": "tsc",
-    "test": "node --test tests/config.test.mjs",
-    "test:browser": "node tests/journey.mjs",
-    "check": "npm run lint && npm run typecheck && npm test && npm run build"
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/journey.mjs && node tests/discovery-browser.mjs && node tests/guide-browser.mjs",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build",
+    "refresh:github": "node scripts/refresh-github.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",

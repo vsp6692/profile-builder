@@ -1,51 +1,56 @@
 {
   "name": "Alex Example",
   "shortName": "Alex",
-  "title": "Platform Engineer",
-  "photo": "assets/photo-tech-portrait-v2.png",
-  "greeting": "Vanakkam!",
-  "tagline": "Secure platforms. Reliable delivery.",
-  "intro": "13+ years designing cloud infrastructure, Kubernetes platforms, and software delivery systems across AWS, Azure, and GCP. Founding platform engineer at Lyric, with $1M+ in annual cloud savings and hands-on ownership of GitOps, developer experience, and security.",
+  "title": "Your engineering role",
+  "greeting": "Hello!",
+  "tagline": "Describe the value of your work.",
+  "intro": "Replace this with a concise, verified professional summary.",
   "contact": {
     "email": "alex@example.com",
-    "location": "Your city",
-    "linkedin": "https://www.linkedin.com/",
-    "github": "https://github.com/"
+    "location": "Your city"
   },
   "resume": {
-    "filename": "Satheesh_Prabhakaran.pdf",
-    "embeddedAssetId": "resume-pdf"
+    "filename": "resume.pdf"
   },
   "about": [
-    "Replace this example with your verified professional summary."
+    "Describe your work, the people you support and the engineering problems you solve."
   ],
-  "aboutLine": "Kubernetes \u00b7 GitOps \u00b7 Infrastructure as Code \u00b7 FinOps \u00b7 Security",
-  "stats": [
-    {
-      "value": "13+",
-      "label": "years in platform & DevOps"
-    },
-    {
-      "value": "$1M+",
-      "label": "annual cloud savings"
-    },
-    {
-      "value": "3",
-      "label": "clouds: AWS \u00b7 Azure \u00b7 GCP"
-    }
-  ],
+  "aboutLine": "Your areas of expertise",
+  "stats": [],
   "education": [],
   "products": [],
-  "journey": [],
+  "journey": [
+    {
+      "id": "example-role",
+      "kind": "employment",
+      "order": 10,
+      "current": true,
+      "year": "Your start year",
+      "company": "Your employer",
+      "role": "Your role",
+      "dates": "Your employment dates",
+      "where": "Your location",
+      "bullets": [
+        "Replace with a responsibility or achievement supported by your records."
+      ],
+      "technologies": []
+    }
+  ],
   "builds": [],
   "prompts": [],
   "filters": [
-    "Friendly help",
-    "Open source",
-    "Websites",
-    "Infrastructure"
+    "Personal project"
   ],
-  "work": [],
+  "work": [
+    {
+      "id": "example-project",
+      "name": "Your project",
+      "type": "Personal project",
+      "note": "Describe the problem, your contribution and the result.",
+      "architectureIds": []
+    }
+  ],
   "skills": [],
-  "achievements": []
+  "achievements": [],
+  "expertise": []
 }

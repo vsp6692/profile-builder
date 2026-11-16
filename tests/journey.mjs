@@ -46,6 +46,11 @@ async function assertNoOverflow(width) {
     overflow.document <= overflow.viewport + 1,
     `Horizontal overflow at ${width}px: ${JSON.stringify(overflow)}`,
   );
+  assert.deepEqual(
+    overflow.offenders,
+    [],
+    `Interactive content is not clipped at ${width}px`,
+  );
 }
 
 async function audit(label) {

@@ -1,0 +1,178 @@
+{
+  "url": "https://example.com/portfolio/",
+  "displayName": "Alex Example",
+  "headline": "Your work. Your story.",
+  "positioning": "Replace this with your verified professional summary and the value of your work.",
+  "portrait": "assets/example-portrait.svg",
+  "defaultView": "recruiter",
+  "defaultTheme": "light",
+  "motion": true,
+  "colors": {
+    "light": {
+      "blue": "#2854d9",
+      "red": "#bd354c"
+    },
+    "dark": {
+      "blue": "#9db8ff",
+      "red": "#ff9ba9"
+    }
+  },
+  "sections": [
+    "about",
+    "impact",
+    "experience",
+    "projects",
+    "architecture",
+    "skills",
+    "briefs",
+    "contact"
+  ],
+  "socialImage": "assets/example-portrait.svg",
+  "journey": {
+    "heroLine": "Your engineering story starts here.",
+    "invitation": "Introduce the work, people and ideas you would like visitors to discover.",
+    "aboutLine": "Share the principles that shape how you work.",
+    "contactLine": "Add a welcoming invitation and your preferred way to connect.",
+    "character": {
+      "skin": "#c59b7c",
+      "hair": "#26364b",
+      "shirt": "#b64c3f",
+      "backpack": "#416b94",
+      "pants": "#334961"
+    },
+    "careerBuildings": [
+      "factory",
+      "studio",
+      "tower",
+      "cloud"
+    ],
+    "defaultProjectArt": "studio",
+    "projectArt": {
+      "example-project": "studio"
+    },
+    "palette": {
+      "light": {
+        "sky": "#f8f2e8",
+        "hill": "#b7cbdc",
+        "far": "#dce4e8",
+        "ground": "#e6decb",
+        "road": "#fcf8ee",
+        "ink": "#26364b",
+        "red": "#b64c3f",
+        "blue": "#416b94",
+        "paper": "#fffaf1"
+      },
+      "dark": {
+        "sky": "#182638",
+        "hill": "#344c68",
+        "far": "#263b53",
+        "ground": "#2c3f51",
+        "road": "#506074",
+        "ink": "#e8e5dc",
+        "red": "#ed9a84",
+        "blue": "#a5c6e6",
+        "paper": "#22354a"
+      }
+    },
+    "stops": [
+      {
+        "id": "about",
+        "label": "About me",
+        "title": "More than the systems I build.",
+        "art": "about"
+      },
+      {
+        "id": "career",
+        "label": "Career journey",
+        "title": "Every place left a mark.",
+        "art": "career"
+      },
+      {
+        "id": "impact",
+        "label": "Engineering impact",
+        "title": "Good engineering. Real-world impact.",
+        "art": "impact"
+      },
+      {
+        "id": "world",
+        "label": "My engineering world",
+        "title": "A world of connected systems.",
+        "art": "world"
+      },
+      {
+        "id": "projects",
+        "label": "Things I’ve built",
+        "title": "Small ideas. Open doors.",
+        "art": "projects"
+      },
+      {
+        "id": "skills",
+        "label": "My toolbox",
+        "title": "The right tool. For the real problem.",
+        "art": "skills"
+      },
+      {
+        "id": "contact",
+        "label": "Let’s connect",
+        "title": "Good things start with a hello.",
+        "art": "contact"
+      }
+    ],
+    "worlds": [
+      {
+        "title": "Cloud platforms",
+        "art": "cloud",
+        "label": "Your cloud experience",
+        "description": "Describe the cloud systems you have actually built and operated.",
+        "categories": [
+          "Cloud Platforms"
+        ],
+        "id": "clouds",
+        "architectureIds": []
+      },
+      {
+        "title": "Kubernetes & GitOps",
+        "art": "lab",
+        "label": "Your platform work",
+        "description": "Describe your documented platform and delivery work.",
+        "categories": [
+          "Kubernetes & Containers",
+          "CI/CD & GitOps",
+          "Platform Engineering"
+        ],
+        "id": "platform",
+        "architectureIds": []
+      },
+      {
+        "title": "Security by design",
+        "art": "vault",
+        "label": "Your security work",
+        "description": "Describe your documented security and governance work.",
+        "categories": [
+          "DevSecOps & Security"
+        ],
+        "id": "security",
+        "architectureIds": []
+      },
+      {
+        "title": "Signals & reliability",
+        "art": "tower",
+        "label": "Your reliability work",
+        "description": "Describe how you have worked with observability and reliability.",
+        "categories": [
+          "Observability"
+        ],
+        "id": "observability",
+        "architectureIds": []
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": false
+  },
+  "github": {
+    "enabled": false,
+    "repositories": [],
+    "ttlHours": 24
+  }
+}

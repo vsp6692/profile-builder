@@ -59,7 +59,8 @@
       "link": "https://github.com/vsp6692/secretmesh",
       "linkLabel": "GitHub",
       "mascot": "🔐",
-      "caption": "Metadata-only control plane"
+      "caption": "Metadata-only control plane",
+      "id": "secretmesh-product"
     }
   ],
   "journey": [
@@ -80,7 +81,11 @@
         "Argo CD",
         "k3s / k3k",
         "AWS · Azure · GCP"
-      ]
+      ],
+      "id": "lyric",
+      "kind": "employment",
+      "order": 40,
+      "current": true
     },
     {
       "year": "2019",
@@ -98,7 +103,11 @@
         "Azure DevOps",
         "SonarQube",
         "JFrog"
-      ]
+      ],
+      "id": "kla",
+      "kind": "employment",
+      "order": 30,
+      "current": false
     },
     {
       "year": "2017",
@@ -117,7 +126,11 @@
         "Terraform",
         "Helm",
         "Packer"
-      ]
+      ],
+      "id": "thoughtworks",
+      "kind": "employment",
+      "order": 20,
+      "current": false
     },
     {
       "year": "2013",
@@ -135,7 +148,11 @@
         "Ansible",
         "Ceph",
         "SDN"
-      ]
+      ],
+      "id": "tcs",
+      "kind": "employment",
+      "order": 10,
+      "current": false
     },
     {
       "year": "Now",
@@ -151,7 +168,11 @@
         "Go",
         "Python",
         "RAG"
-      ]
+      ],
+      "id": "independent-projects",
+      "kind": "independent",
+      "order": 50,
+      "current": true
     }
   ],
   "builds": [
@@ -172,7 +193,14 @@
           "Per-change previews · k3s / k3k"
         ]
       ],
-      "stack": "Kubernetes · Argo CD · k3s · k3k · CI/CD"
+      "stack": "Kubernetes · Argo CD · k3s · k3k · CI/CD",
+      "id": "developer-platform",
+      "diagramKind": "flow",
+      "nodeDetails": [
+        "Application code and deployment configuration form the change being delivered.",
+        "Argo CD provides GitOps workflows as part of the Internal Developer Platform at Lyric.",
+        "Per-change preview environments use k3s/k3k, supporting developers and AI-assisted changes in isolated environments."
+      ]
     },
     {
       "name": "SecretMesh: zero secret persistence",
@@ -195,7 +223,15 @@
           "AWS · Azure · GCP"
         ]
       ],
-      "stack": "Go · OPA · PostgreSQL (goose) · Keycloak · Moto · Next.js"
+      "stack": "Go · OPA · PostgreSQL (goose) · Keycloak · Moto · Next.js",
+      "id": "secretmesh-architecture",
+      "diagramKind": "components",
+      "nodeDetails": [
+        "The UI and API support inventory and policies. Persistence contains inventory and policy metadata, not secret values.",
+        "Identity, approvals, OPA policies and audit records govern execution. Keycloak provides identity.",
+        "CRUD operations, rotation and jobs form the execution plane. A dedicated secret type is designed to prevent accidental logging or serialization.",
+        "Secret values remain in AWS Secrets Manager, Azure Key Vault and GCP Secret Manager."
+      ]
     },
     {
       "name": "LitOverLap: RAG over academic literature",
@@ -214,7 +250,14 @@
           "Neo4j · Qdrant"
         ]
       ],
-      "stack": "Python · Docling · BGE-M3 · Qdrant · Neo4j · GCP · Cloud NAT · IAP"
+      "stack": "Python · Docling · BGE-M3 · Qdrant · Neo4j · GCP · Cloud NAT · IAP",
+      "id": "literature-platform",
+      "diagramKind": "components",
+      "nodeDetails": [
+        "The web and API VM runs nginx, TLS, Expo web and uvicorn. The three-VM split keeps heavy ingestion from blocking the API.",
+        "The orchestrator VM runs Docling, GLiNER and GLiREL, with GCS. The pipeline turns PDFs into structured documents, semantic chunks and BGE-M3 embeddings.",
+        "The datastore VM holds Qdrant for embeddings and Neo4j for a provenance-linked knowledge graph. The infrastructure uses private networking and IAP-only SSH."
+      ]
     }
   ],
   "prompts": [
@@ -246,51 +289,80 @@
       "type": "Open source",
       "note": "Walking companion prototype with fictional AI characters, optional GPS and offline stories",
       "icon": "🚶",
-      "link": "https://github.com/vsp6692/walkmate"
+      "link": "https://github.com/vsp6692/walkmate",
+      "id": "walkmate",
+      "status": "Prototype",
+      "repoUrl": "https://github.com/vsp6692/walkmate"
     },
     {
       "name": "Explore Around You",
       "type": "Open source",
       "note": "Map exploration MVP with nearby discoveries, Surprise Me and local bookmarks; under development",
       "icon": "🌍",
-      "link": "https://github.com/vsp6692/explorearoundyou"
+      "link": "https://github.com/vsp6692/explorearoundyou",
+      "id": "explore-around-you",
+      "status": "In development",
+      "repoUrl": "https://github.com/vsp6692/explorearoundyou"
     },
     {
       "name": "Cost OS Dashboard",
       "type": "Infrastructure",
       "note": "Planning-stage multi-cloud FinOps platform for cost visibility, allocation and optimization",
-      "icon": "📊"
+      "icon": "📊",
+      "id": "cost-os",
+      "status": "Planning"
     },
     {
       "name": "LitOverLap",
       "type": "Friendly help",
       "note": "Helping a friend build research tooling: RAG and knowledge graphs for academic papers, with a three-VM GCP setup, Cloud NAT and IAP-only SSH.",
-      "icon": "📚"
+      "icon": "📚",
+      "id": "literature-overlap",
+      "status": "Friendly help",
+      "architectureIds": [
+        "literature-platform"
+      ]
     },
     {
       "name": "SecretMesh",
       "type": "Open source",
       "note": "Multi-cloud secrets governance, Apache 2.0",
       "icon": "🔐",
-      "link": "https://github.com/vsp6692/secretmesh"
+      "link": "https://github.com/vsp6692/secretmesh",
+      "id": "secretmesh",
+      "status": "Open source",
+      "repoUrl": "https://github.com/vsp6692/secretmesh",
+      "architectureIds": [
+        "secretmesh-architecture"
+      ],
+      "productId": "secretmesh-product"
     },
     {
       "name": "Tiny Seeds Playschool",
       "type": "Websites",
       "note": "Seven-page redesign, every photo and testimonial kept",
-      "icon": "🌱"
+      "icon": "🌱",
+      "id": "tiny-seeds"
     },
     {
       "name": "This profile",
       "type": "Websites",
       "note": "Single static page on GitHub Pages",
-      "icon": "🚶"
+      "icon": "🚶",
+      "id": "profile-builder",
+      "status": "Live",
+      "repoUrl": "https://github.com/vsp6692/profile-builder",
+      "demoUrl": "https://vsp6692.github.io/profile-builder/"
     },
     {
       "name": "Preview environments",
       "type": "Infrastructure",
       "note": "Per-change k3s/k3k environments for an AI-agent workflow",
-      "icon": "🧪"
+      "icon": "🧪",
+      "id": "preview-environments",
+      "architectureIds": [
+        "developer-platform"
+      ]
     }
   ],
   "skills": [
@@ -479,7 +551,17 @@
       "suffix": "M+",
       "label": "Annual cloud savings",
       "text": "Cloud optimization at Lyric, including a move from AMD64 to ARM64.",
-      "anchor": "experience"
+      "anchor": "experience",
+      "id": "cloud-savings",
+      "caseStudy": {
+        "context": "At Lyric, platform ownership spans cloud infrastructure, developer experience and security from the founding stage through successive growth phases.",
+        "decision": "Cloud optimization included a move from AMD64 to ARM64, alongside the broader work of operating the platform.",
+        "result": "$1M+ in annual cloud savings at Lyric.",
+        "sourceIds": [
+          "lyric"
+        ],
+        "note": "The profile records the ARM64 move as one part of the optimization work; it does not quantify the savings attributable to that change alone."
+      }
     },
     {
       "value": "13+",
@@ -487,14 +569,16 @@
       "suffix": "+",
       "label": "Years of engineering",
       "text": "From private cloud and automation to founding-stage platform leadership.",
-      "anchor": "experience"
+      "anchor": "experience",
+      "id": "engineering-experience"
     },
     {
       "value": "3",
       "number": 3,
       "label": "Cloud platforms",
       "text": "Engineering experience across AWS, Azure, and GCP.",
-      "anchor": "skills"
+      "anchor": "skills",
+      "id": "multi-cloud"
     }
   ],
   "securityNote": "Security leadership for ISO 27001 and SOC 2 at Lyric, alongside platform ownership and developer experience.",

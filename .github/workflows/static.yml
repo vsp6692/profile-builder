@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "23 4 * * *"
 permissions:
   contents: read
   pages: write
@@ -20,9 +22,25 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
           cache: npm
       - run: npm ci
+      - name: Restore last-good public repository metadata
+        id: github-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: data/github-cache.json
+          key: github-metadata-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: github-metadata-${{ github.repository_id }}-
+      - name: Refresh public repository metadata
+        run: node scripts/refresh-github.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Keep the last-good snapshot
+        uses: actions/cache/save@v4
+        with:
+          path: data/github-cache.json
+          key: ${{ steps.github-cache.outputs.cache-primary-key }}
       - run: npm run check
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

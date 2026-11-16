@@ -1,46 +1,28 @@
-import type { JourneyConfig } from "./schema.js";
+import type {
+  ArchitectureRecord,
+  CareerRecord,
+  ProfileConfig,
+  SiteConfig,
+} from "./schema.js";
 import profile from "./profile.json" with { type: "json" };
+import example from "./profile.example.json" with { type: "json" };
 import site from "./site.json" with { type: "json" };
-interface SiteShape {
-  journey: JourneyConfig;
-  url: string;
-  displayName: string;
-  headline: string;
-  positioning: string;
-  portrait: string;
-  resume: string;
-  socialImage: string;
-  defaultView: string;
+import exampleSite from "./site.example.json" with { type: "json" };
+
+// JSON imports widen string literals. Runtime validation checks their allowed
+// values; these assignments check the rest of each complete configuration shape.
+type ParsedSite = Omit<SiteConfig, "defaultTheme" | "defaultView"> & {
   defaultTheme: string;
-  motion: boolean;
-  colors: Record<"light" | "dark", { blue: string; red: string }>;
-  sections: string[];
-}
-interface ProfileShape {
-  name: string;
-  title: string;
-  contact: { email: string; linkedin: string; github: string };
-  journey: {
-    company: string;
-    role: string;
-    dates: string;
-    bullets: string[];
-    technologies: string[];
-  }[];
-  achievements: {
-    value: string;
-    number: number;
-    label: string;
-    text: string;
-    anchor: string;
-  }[];
-  builds: { name: string; text: string; diagram: string[][]; stack: string }[];
-  work: { name: string; type: string; note: string; link?: string }[];
-  skills: {
-    category: string;
-    items: string[];
-    tools: { name: string; icon: string; detail: string }[];
-  }[];
-}
-export const checkedSite: SiteShape = site;
-export const checkedProfile: ProfileShape = profile;
+  defaultView?: string;
+};
+type ParsedProfile = Omit<ProfileConfig, "journey" | "builds"> & {
+  journey: (Omit<CareerRecord, "kind"> & { kind?: string })[];
+  builds: (Omit<ArchitectureRecord, "diagramKind"> & {
+    diagramKind?: string;
+  })[];
+};
+export const checkedSite: ParsedSite = site;
+export const checkedProfile: ParsedProfile = profile;
+export const checkedExample: ParsedProfile = example;
+
+export const checkedExampleSite: ParsedSite = exampleSite;

@@ -6,8 +6,9 @@
   let paused = media.matches || root.dataset.motion === "off",
     lastScroll = scrollY,
     framePending = false,
-    walkTimer,
-    returnFocus = null;
+    walkTimer;
+  const dialogOrigins = new WeakMap();
+  const dialogStack = [];
   const scenes = [...document.querySelectorAll("[data-scene]")],
     traveler = $("traveler");
   const theme = () => {
@@ -50,22 +51,40 @@
   const closeDialog = (dialog) => {
     dialog.close();
   };
-  document.querySelectorAll("[data-open]").forEach((button) =>
-    button.addEventListener("click", () => {
-      const target = $(button.dataset.open);
-      if (!target) return;
-      returnFocus = button;
-      target.showModal();
-      document.body.classList.add("modal-open");
-    }),
-  );
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-open]");
+    if (!button) return;
+    const target = $(button.dataset.open);
+    if (!target) return;
+    if (target.open) {
+      // A guide result can lead back to the Quick Profile beneath it.
+      for (const dialog of dialogStack
+        .slice(dialogStack.indexOf(target) + 1)
+        .reverse()) {
+        dialogOrigins.set(dialog, target.querySelector("[data-close]"));
+        dialog.close();
+      }
+      target.querySelector("[data-close]")?.focus();
+      return;
+    }
+    dialogOrigins.set(target, button);
+    target.showModal();
+    dialogStack.push(target);
+    target.scrollTop = 0;
+    document.body.classList.add("modal-open");
+  });
   document.querySelectorAll("dialog").forEach((dialog) => {
     dialog
       .querySelector("[data-close]")
       .addEventListener("click", () => closeDialog(dialog));
     dialog.addEventListener("close", () => {
-      document.body.classList.remove("modal-open");
-      returnFocus?.focus({ preventScroll: true });
+      const index = dialogStack.indexOf(dialog);
+      if (index !== -1) dialogStack.splice(index, 1);
+      document.body.classList.toggle(
+        "modal-open",
+        Boolean(document.querySelector("dialog[open]")),
+      );
+      dialogOrigins.get(dialog)?.focus({ preventScroll: true });
     });
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) {
@@ -86,24 +105,70 @@
     }),
   );
   let toastTimer;
-  async function copy(text) {
+  async function copy(text, button, message) {
+    const feedback =
+      button.closest("dialog")?.querySelector("[data-copy-status]") ||
+      $("feedback");
     try {
       await navigator.clipboard.writeText(text);
-      $("feedback").textContent = "Copied. Let’s start a conversation.";
+      feedback.textContent = message;
     } catch {
-      $("feedback").textContent = "Please select and copy the visible text.";
+      feedback.textContent = `Copy unavailable. Select and copy: ${text}`;
     }
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => ($("feedback").textContent = ""), 3500);
+    toastTimer = setTimeout(() => (feedback.textContent = ""), 8000);
   }
-  $("copy-email")?.addEventListener("click", () =>
-    copy($("copy-email").dataset.email),
-  );
+  document
+    .querySelectorAll("[data-email]")
+    .forEach((button) =>
+      button.addEventListener("click", () =>
+        copy(
+          button.dataset.email,
+          button,
+          "Email copied. Ready for your introduction.",
+        ),
+      ),
+    );
   document
     .querySelectorAll("[data-copy]")
     .forEach((b) =>
-      b.addEventListener("click", () => copy($(b.dataset.copy).textContent)),
+      b.addEventListener("click", () =>
+        copy($(b.dataset.copy).textContent, b, "Engineering brief copied."),
+      ),
     );
+  document.querySelectorAll("[data-architecture]").forEach((explorer) => {
+    const buttons = [...explorer.querySelectorAll("[data-node-target]")];
+    const select = (button) => {
+      buttons.forEach((node) => {
+        const selected = node === button;
+        node.setAttribute("aria-expanded", String(selected));
+        $(node.dataset.nodeTarget).hidden = !selected;
+      });
+    };
+    buttons.forEach((button, i) => {
+      button.addEventListener("click", () => select(button));
+      button.addEventListener("keydown", (event) => {
+        const offset = {
+          ArrowRight: 1,
+          ArrowDown: 1,
+          ArrowLeft: -1,
+          ArrowUp: -1,
+        }[event.key];
+        if (offset === undefined && event.key !== "Home" && event.key !== "End")
+          return;
+        event.preventDefault();
+        const next =
+          event.key === "Home"
+            ? 0
+            : event.key === "End"
+              ? buttons.length - 1
+              : (i + offset + buttons.length) % buttons.length;
+        select(buttons[next]);
+        buttons[next].focus();
+      });
+    });
+    if (buttons.length) select(buttons[0]);
+  });
   function update() {
     framePending = false;
     const max = root.scrollHeight - innerHeight,
