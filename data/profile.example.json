@@ -1,0 +1,51 @@
+{
+  "name": "Alex Example",
+  "shortName": "Alex",
+  "title": "Platform Engineer",
+  "photo": "assets/photo-tech-portrait-v2.png",
+  "greeting": "Vanakkam!",
+  "tagline": "Secure platforms. Reliable delivery.",
+  "intro": "13+ years designing cloud infrastructure, Kubernetes platforms, and software delivery systems across AWS, Azure, and GCP. Founding platform engineer at Lyric, with $1M+ in annual cloud savings and hands-on ownership of GitOps, developer experience, and security.",
+  "contact": {
+    "email": "alex@example.com",
+    "location": "Your city",
+    "linkedin": "https://www.linkedin.com/",
+    "github": "https://github.com/"
+  },
+  "resume": {
+    "filename": "Satheesh_Prabhakaran.pdf",
+    "embeddedAssetId": "resume-pdf"
+  },
+  "about": [
+    "Replace this example with your verified professional summary."
+  ],
+  "aboutLine": "Kubernetes \u00b7 GitOps \u00b7 Infrastructure as Code \u00b7 FinOps \u00b7 Security",
+  "stats": [
+    {
+      "value": "13+",
+      "label": "years in platform & DevOps"
+    },
+    {
+      "value": "$1M+",
+      "label": "annual cloud savings"
+    },
+    {
+      "value": "3",
+      "label": "clouds: AWS \u00b7 Azure \u00b7 GCP"
+    }
+  ],
+  "education": [],
+  "products": [],
+  "journey": [],
+  "builds": [],
+  "prompts": [],
+  "filters": [
+    "Friendly help",
+    "Open source",
+    "Websites",
+    "Infrastructure"
+  ],
+  "work": [],
+  "skills": [],
+  "achievements": []
+}

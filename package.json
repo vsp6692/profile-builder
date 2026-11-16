@@ -1,0 +1,22 @@
+{
+  "name": "engineering-profile",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "eslint scripts assets/app.js tests",
+    "typecheck": "tsc",
+    "test": "node --test tests/config.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.17.0",
+    "playwright": "^1.49.1",
+    "prettier": "^3.10.1",
+    "typescript": "^5.7.2"
+  }
+}

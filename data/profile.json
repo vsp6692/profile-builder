@@ -1,0 +1,508 @@
+{
+  "name": "Satheesh Prabhakaran Venkatasamy",
+  "shortName": "Satheesh",
+  "title": "DevSecOps & Platform Engineering Lead",
+  "photo": "assets/photo-tech-portrait-v2.png",
+  "greeting": "Vanakkam!",
+  "tagline": "Secure platforms. Reliable delivery.",
+  "intro": "13+ years designing cloud infrastructure, Kubernetes platforms, and software delivery systems across AWS, Azure, and GCP. Founding platform engineer at Lyric, with $1M+ in annual cloud savings and hands-on ownership of GitOps, developer experience, and security.",
+  "contact": {
+    "email": "vsp6692@gmail.com",
+    "phone": "+91 9789716320",
+    "location": "Chennai, India",
+    "linkedin": "https://www.linkedin.com/in/satheesh-prabhakaran-venkatasamy-969a8418/",
+    "github": "https://github.com/vsp6692"
+  },
+  "resume": {
+    "filename": "Satheesh_Prabhakaran.pdf",
+    "embeddedAssetId": "resume-pdf"
+  },
+  "about": [
+    "I design and operate the platforms behind engineering teams: cloud infrastructure, Kubernetes clusters, delivery pipelines, observability, and security controls.",
+    "At Lyric, I have helped build the engineering foundation from the founding stage through successive growth phases. My work includes an Internal Developer Platform, Argo CD workflows, and isolated preview environments for AI-assisted development.",
+    "I connect infrastructure decisions to operational outcomes: reducing cloud spend, making deployments repeatable, and integrating security into engineering workflows. My experience spans AWS, Azure, GCP, and earlier OpenStack and Ceph environments."
+  ],
+  "aboutLine": "Kubernetes · GitOps · Infrastructure as Code · FinOps · Security",
+  "stats": [
+    {
+      "value": "13+",
+      "label": "years in platform & DevOps"
+    },
+    {
+      "value": "$1M+",
+      "label": "annual cloud savings"
+    },
+    {
+      "value": "3",
+      "label": "clouds: AWS · Azure · GCP"
+    }
+  ],
+  "education": [
+    {
+      "school": "Government College of Technology",
+      "degree": "B.Tech",
+      "dates": "2009 – 2013",
+      "location": "Coimbatore, Tamil Nadu"
+    }
+  ],
+  "products": [
+    {
+      "name": "SecretMesh",
+      "kicker": "Open-source secrets governance",
+      "blurb": "A control plane over AWS Secrets Manager, Azure Key Vault and GCP Secret Manager. Secret values never leave your vaults and are never stored by SecretMesh.",
+      "bullets": [
+        "Metadata-only persistence across AWS Secrets Manager, Azure Key Vault, and GCP Secret Manager",
+        "Policy evaluation with OPA, identity with Keycloak, and auditable approval workflows",
+        "Dedicated secret type designed to prevent accidental logging and serialization"
+      ],
+      "stack": "Go · Next.js · OPA · PostgreSQL · Keycloak · OpenAPI 3.1",
+      "link": "https://github.com/vsp6692/secretmesh",
+      "linkLabel": "GitHub",
+      "mascot": "🔐",
+      "caption": "Metadata-only control plane"
+    }
+  ],
+  "journey": [
+    {
+      "year": "2022",
+      "company": "Lyric",
+      "role": "DevSecOps and Platform Lead",
+      "dates": "Mar 2022 – Present",
+      "where": "Chennai · Remote",
+      "bullets": [
+        "Founding engineering member through 0 → 1, 1 → 10 and now 10 → 100.",
+        "Internal Developer Platform, GitOps with Argo CD, and per-change preview environments on k3s/k3k for an AI-agent workflow.",
+        "$1M+ yearly cloud savings, including an AMD64 → ARM64 move.",
+        "Security lead for ISO 27001 and SOC 2."
+      ],
+      "technologies": [
+        "Kubernetes",
+        "Argo CD",
+        "k3s / k3k",
+        "AWS · Azure · GCP"
+      ]
+    },
+    {
+      "year": "2019",
+      "company": "KLA",
+      "role": "DevOps Lead",
+      "dates": "Apr 2019 – Feb 2022",
+      "where": "Chennai · Remote",
+      "bullets": [
+        "Led the DevOps transformation away from legacy monolithic deployments.",
+        "Ran Jenkins, Azure DevOps, SonarQube, JFrog and GitHub for many teams; wrote shared Groovy libraries.",
+        "Built Power BI dashboards that gave leadership CI/CD metrics."
+      ],
+      "technologies": [
+        "Jenkins",
+        "Azure DevOps",
+        "SonarQube",
+        "JFrog"
+      ]
+    },
+    {
+      "year": "2017",
+      "company": "Thoughtworks",
+      "role": "DevOps Lead",
+      "dates": "Aug 2017 – Mar 2019",
+      "where": "Chennai",
+      "bullets": [
+        "Moved .NET Framework apps to .NET Core and split a monolith into microservices on Docker and Kubernetes (Deltatre).",
+        "CI/CD across QA, UAT, staging and production clusters with Helm and TFS.",
+        "Migrated a retail estate from AWS to Azure with Terraform modules and Packer golden images."
+      ],
+      "technologies": [
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Helm",
+        "Packer"
+      ]
+    },
+    {
+      "year": "2013",
+      "company": "TCS",
+      "role": "Associate Software Engineer",
+      "dates": "Oct 2013 – Aug 2017",
+      "where": "Chennai · On-site",
+      "bullets": [
+        "Built and managed SDN environments for Versa Controllers (Comcast).",
+        "Deployed and automated an OpenStack private cloud with Ansible; contributed upstream to OpenStack and Ansible.",
+        "Managed Ceph clusters and made OpenStack highly available."
+      ],
+      "technologies": [
+        "OpenStack",
+        "Ansible",
+        "Ceph",
+        "SDN"
+      ]
+    },
+    {
+      "year": "Now",
+      "company": "Independent projects",
+      "role": "Product engineering",
+      "dates": "Evenings & weekends",
+      "where": "Chennai",
+      "bullets": [
+        "Open-sourcing SecretMesh.",
+        "Infrastructure and RAG pipelines for research tooling."
+      ],
+      "technologies": [
+        "Go",
+        "Python",
+        "RAG"
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "name": "Developer platform & GitOps",
+      "text": "At Lyric, platform work combines an Internal Developer Platform with Argo CD delivery and per-change preview environments on k3s/k3k. The engineering focus is repeatable deployment and isolated environments that support both developers and AI-assisted changes.",
+      "diagram": [
+        [
+          "Change",
+          "Application code and deployment configuration"
+        ],
+        [
+          "Delivery",
+          "Argo CD · GitOps workflows"
+        ],
+        [
+          "Environment",
+          "Per-change previews · k3s / k3k"
+        ]
+      ],
+      "stack": "Kubernetes · Argo CD · k3s · k3k · CI/CD"
+    },
+    {
+      "name": "SecretMesh: zero secret persistence",
+      "text": "SecretMesh separates secrets governance from secret storage. The control plane persists inventory and policy metadata; secret values remain in native cloud vaults. Identity, approvals, OPA policies, and audit records govern execution. A dedicated secret type is designed to prevent accidental logging or serialization.",
+      "diagram": [
+        [
+          "Control plane",
+          "UI · API · inventory · policies"
+        ],
+        [
+          "Security plane",
+          "identity · approval · OPA · audit"
+        ],
+        [
+          "Execution plane",
+          "CRUD · rotation · jobs"
+        ],
+        [
+          "Native vaults",
+          "AWS · Azure · GCP"
+        ]
+      ],
+      "stack": "Go · OPA · PostgreSQL (goose) · Keycloak · Moto · Next.js"
+    },
+    {
+      "name": "LitOverLap: RAG over academic literature",
+      "text": "As friendly help, I supported a friend with research tooling and its GCP infrastructure. Researchers upload a paper and see how it connects to an indexed corpus. PDFs become structured documents, then semantic chunks with BGE-M3 embeddings in Qdrant, plus a provenance-linked knowledge graph in Neo4j. I split it across three GCP VMs so heavy ingestion never blocks the API, with private networking and IAP-only SSH.",
+      "diagram": [
+        [
+          "VM1 · web + API",
+          "nginx · TLS · Expo web · uvicorn"
+        ],
+        [
+          "VM2 · orchestrator",
+          "Docling · GLiNER · GLiREL · GCS"
+        ],
+        [
+          "VM3 · datastore",
+          "Neo4j · Qdrant"
+        ]
+      ],
+      "stack": "Python · Docling · BGE-M3 · Qdrant · Neo4j · GCP · Cloud NAT · IAP"
+    }
+  ],
+  "prompts": [
+    {
+      "title": "Security as a design decision",
+      "project": "SecretMesh",
+      "text": "Build SecretMesh as a cloud-native control plane with zero secret-value persistence. Secret values remain inside the customer's AWS Secrets Manager, Azure Key Vault or GCP Secret Manager. Redact them from logs, traces, error messages, crash dumps and telemetry."
+    },
+    {
+      "title": "Redesign without losing anything",
+      "project": "Tiny Seeds Playschool",
+      "text": "Redesign the scraped site with serif typography, outlined layouts, primary colours and photography. Keep every gallery photo, testimonial, service, address and contact detail, and add a check that proves nothing was lost."
+    },
+    {
+      "title": "This page",
+      "project": "Profile",
+      "text": "Make my profile like walkwithmaryam.vercel.app, with my photo and all prompts. Projects whatever we worked on here can be added."
+    }
+  ],
+  "filters": [
+    "Friendly help",
+    "Open source",
+    "Websites",
+    "Infrastructure"
+  ],
+  "work": [
+    {
+      "name": "WalkMate",
+      "type": "Open source",
+      "note": "Walking companion prototype with fictional AI characters, optional GPS and offline stories",
+      "icon": "🚶",
+      "link": "https://github.com/vsp6692/walkmate"
+    },
+    {
+      "name": "Explore Around You",
+      "type": "Open source",
+      "note": "Map exploration MVP with nearby discoveries, Surprise Me and local bookmarks; under development",
+      "icon": "🌍",
+      "link": "https://github.com/vsp6692/explorearoundyou"
+    },
+    {
+      "name": "Cost OS Dashboard",
+      "type": "Infrastructure",
+      "note": "Planning-stage multi-cloud FinOps platform for cost visibility, allocation and optimization",
+      "icon": "📊"
+    },
+    {
+      "name": "LitOverLap",
+      "type": "Friendly help",
+      "note": "Helping a friend build research tooling: RAG and knowledge graphs for academic papers, with a three-VM GCP setup, Cloud NAT and IAP-only SSH.",
+      "icon": "📚"
+    },
+    {
+      "name": "SecretMesh",
+      "type": "Open source",
+      "note": "Multi-cloud secrets governance, Apache 2.0",
+      "icon": "🔐",
+      "link": "https://github.com/vsp6692/secretmesh"
+    },
+    {
+      "name": "Tiny Seeds Playschool",
+      "type": "Websites",
+      "note": "Seven-page redesign, every photo and testimonial kept",
+      "icon": "🌱"
+    },
+    {
+      "name": "This profile",
+      "type": "Websites",
+      "note": "Single static page on GitHub Pages",
+      "icon": "🚶"
+    },
+    {
+      "name": "Preview environments",
+      "type": "Infrastructure",
+      "note": "Per-change k3s/k3k environments for an AI-agent workflow",
+      "icon": "🧪"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Cloud Platforms",
+      "items": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "tools": [
+        {
+          "name": "AWS",
+          "icon": "amazonwebservices",
+          "detail": "Production EKS, security monitoring, and multi-cloud FinOps."
+        },
+        {
+          "name": "GCP",
+          "icon": "googlecloud",
+          "detail": "Multi-VM RAG infrastructure and centralised FinOps visibility."
+        }
+      ]
+    },
+    {
+      "category": "Kubernetes & Containers",
+      "items": [
+        "Kubernetes (EKS, AKS, GKE, K3s, k3k)",
+        "Helm",
+        "KEDA",
+        "Istio",
+        "Kamaji",
+        "Gardener",
+        "Docker"
+      ],
+      "tools": [
+        {
+          "name": "Kubernetes",
+          "icon": "kubernetes",
+          "detail": "EKS, AKS, GKE, K3s and k3k; reliability, scaling and ephemeral preview environments."
+        }
+      ]
+    },
+    {
+      "category": "Infrastructure as Code",
+      "items": [
+        "Terraform",
+        "Crossplane",
+        "Ansible",
+        "Packer"
+      ],
+      "tools": [
+        {
+          "name": "Terraform",
+          "icon": "terraform",
+          "detail": "Reusable modules, peer-reviewed plans and blast-radius checks."
+        }
+      ]
+    },
+    {
+      "category": "CI/CD & GitOps",
+      "items": [
+        "Argo CD",
+        "Argo Rollouts",
+        "GitHub Actions",
+        "GitLab CI",
+        "Jenkins",
+        "Azure DevOps"
+      ],
+      "tools": [
+        {
+          "name": "Argo CD",
+          "icon": "argocd",
+          "detail": "Organisation-wide GitOps with ApplicationSets, App-of-Apps and progressive delivery."
+        },
+        {
+          "name": "GitHub Actions",
+          "icon": "githubactions",
+          "detail": "Self-hosted and Kubernetes runners for regression suites."
+        }
+      ]
+    },
+    {
+      "category": "DevSecOps & Security",
+      "items": [
+        "Cloudflare Zero Trust",
+        "GuardDuty",
+        "Prowler",
+        "ISO 27001",
+        "SOC 2"
+      ],
+      "tools": [
+        {
+          "name": "Cloudflare",
+          "icon": "cloudflare",
+          "detail": "Zero Trust, DNS, edge configuration and Workers."
+        }
+      ]
+    },
+    {
+      "category": "Observability",
+      "items": [
+        "OpenTelemetry",
+        "Prometheus",
+        "Thanos",
+        "Grafana",
+        "Datadog",
+        "Sentry",
+        "PagerDuty"
+      ],
+      "tools": [
+        {
+          "name": "Grafana",
+          "icon": "grafana",
+          "detail": "Enterprise observability with OpenTelemetry, Prometheus, Thanos and ClickHouse."
+        },
+        {
+          "name": "Sentry",
+          "icon": "sentry",
+          "detail": "Error tracking correlated with logs and traces during incidents."
+        }
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": [
+        "PostgreSQL",
+        "Qdrant",
+        "Neo4j"
+      ],
+      "tools": []
+    },
+    {
+      "category": "Automation & Development",
+      "items": [
+        "Python (Flask, FastAPI)",
+        "TypeScript",
+        "Go",
+        "Next.js",
+        "Prisma",
+        "ERPNext / Frappe",
+        "RAG",
+        "Claude Code & AI agents"
+      ],
+      "tools": [
+        {
+          "name": "Python",
+          "icon": "python",
+          "detail": "ERPNext apps, RAG pipelines and platform automation."
+        },
+        {
+          "name": "TypeScript",
+          "icon": "typescript",
+          "detail": "Next.js apps and Node services for commerce, ERP and marketplaces."
+        },
+        {
+          "name": "Linux",
+          "icon": "linux",
+          "detail": "Ubuntu servers, native local dev, and everything in between."
+        }
+      ]
+    },
+    {
+      "category": "FinOps",
+      "items": [
+        "Cloud cost optimization",
+        "AMD64 → ARM64",
+        "Multi-cloud cost visibility"
+      ],
+      "tools": []
+    },
+    {
+      "category": "Platform Engineering",
+      "items": [
+        "Internal Developer Platform",
+        "Developer experience",
+        "Isolated preview environments"
+      ],
+      "tools": []
+    }
+  ],
+  "achievements": [
+    {
+      "value": "$1M+",
+      "number": 1,
+      "prefix": "$",
+      "suffix": "M+",
+      "label": "Annual cloud savings",
+      "text": "Cloud optimization at Lyric, including a move from AMD64 to ARM64.",
+      "anchor": "experience"
+    },
+    {
+      "value": "13+",
+      "number": 13,
+      "suffix": "+",
+      "label": "Years of engineering",
+      "text": "From private cloud and automation to founding-stage platform leadership.",
+      "anchor": "experience"
+    },
+    {
+      "value": "3",
+      "number": 3,
+      "label": "Cloud platforms",
+      "text": "Engineering experience across AWS, Azure, and GCP.",
+      "anchor": "skills"
+    }
+  ],
+  "securityNote": "Security leadership for ISO 27001 and SOC 2 at Lyric, alongside platform ownership and developer experience.",
+  "expertise": [
+    "DevSecOps",
+    "Kubernetes",
+    "Cloud security",
+    "Platform engineering",
+    "FinOps"
+  ]
+}

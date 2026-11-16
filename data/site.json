@@ -1,0 +1,32 @@
+{
+  "url": "https://vsp6692.github.io/profile-builder/",
+  "displayName": "Satheesh Prabhakaran",
+  "headline": "Secure by design. Built for what’s next.",
+  "positioning": "DevSecOps & platform engineering leader. I turn cloud complexity into secure platforms, reliable delivery, and measurable business impact.",
+  "portrait": "assets/portrait.jpg",
+  "resume": "assets/resume.pdf",
+  "defaultView": "recruiter",
+  "defaultTheme": "light",
+  "motion": true,
+  "colors": {
+    "light": {
+      "blue": "#2854d9",
+      "red": "#bd354c"
+    },
+    "dark": {
+      "blue": "#9db8ff",
+      "red": "#ff9ba9"
+    }
+  },
+  "sections": [
+    "about",
+    "impact",
+    "experience",
+    "projects",
+    "architecture",
+    "skills",
+    "briefs",
+    "contact"
+  ],
+  "socialImage": "assets/social-preview.png"
+}
