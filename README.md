@@ -1,6 +1,6 @@
 # Satheesh's portfolio
 
-A static, responsive portfolio with a walking theme, professional summary, recent-first experience, architecture case studies, selected projects, copyable engineering briefs, technical skills, and an embedded resume PDF.
+A static, responsive portfolio with a dark DevSecOps theme, professional summary, recent-first experience, architecture case studies, selected projects, copyable engineering briefs, technical skills, and an embedded resume PDF.
 
 Open `index.html` in a browser. Edit the `profile` object near the top of that file to update content. The active profile portrait is `assets/photo-tech-portrait-v2.png`. The original uploaded photo is retained at `assets/photo.jpg`. The contact form opens the visitor's email app with a prepared message.
 
