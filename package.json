@@ -8,7 +8,7 @@
     "lint": "eslint scripts assets/app.js tests",
     "typecheck": "tsc",
     "test": "node --test tests/config.test.mjs",
-    "test:browser": "node tests/browser.mjs",
+    "test:browser": "node tests/journey.mjs",
     "check": "npm run lint && npm run typecheck && npm test && npm run build"
   },
   "devDependencies": {

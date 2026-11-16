@@ -1,6 +1,8 @@
+import type { JourneyConfig } from "./schema.js";
 import profile from "./profile.json" with { type: "json" };
 import site from "./site.json" with { type: "json" };
 interface SiteShape {
+  journey: JourneyConfig;
   url: string;
   displayName: string;
   headline: string;

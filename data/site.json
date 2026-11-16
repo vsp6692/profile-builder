@@ -28,5 +28,143 @@
     "briefs",
     "contact"
   ],
-  "socialImage": "assets/social-preview.png"
+  "socialImage": "assets/social-preview.png",
+  "journey": {
+    "heroLine": "13+ Years Building, Securing & Scaling Cloud Platforms.",
+    "invitation": "A little world. A long journey. Come explore the places, people, and ideas behind my work.",
+    "aboutLine": "I care about what happens between an idea and a dependable system — and the people doing that work.",
+    "contactLine": "You’ve seen a little of my world. I’d love to hear about yours. Let’s talk platforms, security, or what you’re building next.",
+    "character": {
+      "skin": "#a96e4b",
+      "hair": "#263047",
+      "shirt": "#ce5a4c",
+      "backpack": "#4b6f95",
+      "pants": "#334961"
+    },
+    "careerBuildings": [
+      "factory",
+      "studio",
+      "tower",
+      "cloud"
+    ],
+    "defaultProjectArt": "studio",
+    "projectArt": {
+      "SecretMesh": "vault",
+      "WalkMate": "compass",
+      "Explore Around You": "map",
+      "Cost OS Dashboard": "chart",
+      "LitOverLap": "library",
+      "Tiny Seeds Playschool": "school",
+      "This profile": "terminal",
+      "Preview environments": "lab"
+    },
+    "palette": {
+      "light": {
+        "sky": "#f8f2e8",
+        "hill": "#b7cbdc",
+        "far": "#dce4e8",
+        "ground": "#e6decb",
+        "road": "#fcf8ee",
+        "ink": "#26364b",
+        "red": "#b64c3f",
+        "blue": "#416b94",
+        "paper": "#fffaf1"
+      },
+      "dark": {
+        "sky": "#182638",
+        "hill": "#344c68",
+        "far": "#263b53",
+        "ground": "#2c3f51",
+        "road": "#506074",
+        "ink": "#e8e5dc",
+        "red": "#ed9a84",
+        "blue": "#a5c6e6",
+        "paper": "#22354a"
+      }
+    },
+    "stops": [
+      {
+        "id": "about",
+        "label": "About me",
+        "title": "More than the systems I build.",
+        "art": "about"
+      },
+      {
+        "id": "career",
+        "label": "Career journey",
+        "title": "Every place left a mark.",
+        "art": "career"
+      },
+      {
+        "id": "impact",
+        "label": "Engineering impact",
+        "title": "Good engineering. Real-world impact.",
+        "art": "impact"
+      },
+      {
+        "id": "world",
+        "label": "My engineering world",
+        "title": "A world of connected systems.",
+        "art": "world"
+      },
+      {
+        "id": "projects",
+        "label": "Things I’ve built",
+        "title": "Small ideas. Open doors.",
+        "art": "projects"
+      },
+      {
+        "id": "skills",
+        "label": "My toolbox",
+        "title": "The right tool. For the real problem.",
+        "art": "skills"
+      },
+      {
+        "id": "contact",
+        "label": "Let’s connect",
+        "title": "Good things start with a hello.",
+        "art": "contact"
+      }
+    ],
+    "worlds": [
+      {
+        "title": "Cloud platforms",
+        "art": "cloud",
+        "label": "AWS · Azure · GCP",
+        "description": "Multi-cloud engineering across AWS, Azure, and GCP.",
+        "categories": [
+          "Cloud Platforms"
+        ]
+      },
+      {
+        "title": "Kubernetes & GitOps",
+        "art": "lab",
+        "label": "Deploy with confidence",
+        "description": "Platform work connects Kubernetes, GitOps and isolated environments.",
+        "categories": [
+          "Kubernetes & Containers",
+          "CI/CD & GitOps",
+          "Platform Engineering"
+        ]
+      },
+      {
+        "title": "Security by design",
+        "art": "vault",
+        "label": "Trust is built in",
+        "description": "Security and governance are part of the engineering workflow.",
+        "categories": [
+          "DevSecOps & Security"
+        ]
+      },
+      {
+        "title": "Signals & reliability",
+        "art": "tower",
+        "label": "Observe. Understand.",
+        "description": "Observability helps teams understand the systems they operate.",
+        "categories": [
+          "Observability"
+        ]
+      }
+    ]
+  }
 }

@@ -1,62 +1,60 @@
-# Engineering profile
+# Walk Through My Engineering Journey
 
-A configuration-driven, static portfolio with recruiter and engineering perspectives, light/dark themes, career disclosures, contextual achievements, filterable projects, interactive architecture, tool details, and accessible motion controls.
+An illustrated, configuration-driven engineering portfolio. Visitors travel through an original SVG landscape: a cabin, lookout, career town, cloud highlands, observatory, makers’ village, workshop, and meeting place. Scrolling animates a small engineer; landmarks open professional field notes. Quick Profile makes the whole journey optional.
 
 Live: https://vsp6692.github.io/profile-builder/
 
-## Run and build
+## Build and run
 
-Requires Node.js 22+ and npm. No API keys, backend, or runtime dependencies.
+Node.js 22+ and npm. No API keys, backend, runtime libraries, external fonts, tracking, or cookies.
 
 ```sh
 npm ci
 npm run check
 npm run build
-```
-
-Open `index.html` directly for a local review. Deploy `dist/`. The checked-in `index.html` is generated: edit configuration and source files, then rebuild. Native links, all career content, and disclosure controls work without JavaScript. JavaScript adds perspective selection, filtering, copying, animation and email draft preparation.
-
-## Customize your fork
-
-1. Edit `data/profile.json`: name, contact, about, education, career records and technologies, achievements, project summaries, product detail, architecture nodes, skill categories and tool descriptions, and original briefs. `data/profile.example.json` is an intentionally minimal starting point, not production data.
-2. Edit `data/site.json`: public URL (including repository path and trailing slash), display name, headline, positioning, portrait, resume, social image, theme colors, default perspective, motion preference, and visible section IDs.
-3. Replace the portrait, PDF, and social card with your own files under `assets/`. Update their configuration paths. The PDF is a separate source: website edits do not update it.
-4. Set `profile.achievements` to verified results only. Numeric cards accept `number`, `prefix`, `suffix`, `value`, `label`, `text`, and a section `anchor`. Use `journey[].technologies` for career tags. Projects match detailed product or architecture records by name.
-5. Run the checks and rebuild. Review both themes and perspectives before pushing.
-
-Available section IDs: `about`, `impact`, `experience`, `projects`, `architecture`, `skills`, `briefs`, `contact`. Technical sections are initially collapsed from the recruiter presentation, but rendered in the same HTML. Direct links to technical sections automatically reveal Engineering view. No duplicate biographies are maintained.
-
-Optional build environment variables: `PROFILE_CONFIG` and `SITE_CONFIG` select alternative JSON files. There are no secret environment variables. `data/schema.ts` documents theme/view options; `data/validate-types.ts` checks the production data shape, and the renderer validates URLs, modes, asset paths, and colors at runtime.
-
-## Source architecture
-
-- `scripts/build.mjs`: reusable HTML renderers, static metadata, sitemap, robots file and deployment asset assembly.
-- `assets/portfolio.css`: responsive layouts and semantic design tokens. Core tokens include `--bg`, `--surface`, `--wash`, `--text`, `--muted`, `--line`, `--blue`, and `--red`.
-- `assets/app.js`: progressive enhancement; no framework or animation dependency.
-- `data/`: shared content and site settings.
-- `tests/`: configuration and browser regression checks.
-- `docs/AUDIT.md`: source audit, design rationale and content boundaries.
-
-Application code remains JavaScript to preserve the original lightweight stack. TypeScript checks the configuration contract; this is not a fully typed frontend application.
-
-## GitHub Pages
-
-In Settings → Pages, select **GitHub Actions**. Set `site.url` to your own Pages URL. Push to `main`. The workflow installs locked dependencies, runs lint/type/configuration checks, generates `dist/`, and uploads only that directory to Pages. Relative asset URLs work for both repository paths and custom domains. For a custom domain, configure it in Pages settings and update the canonical URL. `robots.txt` is effective as a robots policy only at a domain root; repository-path sites still publish a sitemap URL.
-
-## Verification
-
-```sh
-npm run lint
-npm run typecheck
-npm test
-npm run build
 npm run test:browser
 ```
 
-Browser tests require installed Google Chrome (`channel: 'chrome'`). They run headlessly against local static files and cover both themes with axe, perspective switching, disclosures, filters, theme persistence, 320–1440 px layouts, mobile menu keyboard handling, reduced motion, deep links, no-JavaScript content and runtime errors. Browser tests are local; the deployment workflow runs lint, type checks, unit tests and build.
+Open `index.html` directly, or deploy `dist/`. The checked-in HTML is generated; edit configuration/source and rebuild. Browser tests use installed Google Chrome through Playwright. They do not require a local server.
 
-System fonts avoid external font requests. The optimized portrait is ~90 KB; PDF and icons are separate assets. No analytics, tracking, cookies or external scripts. Theme choice uses local storage. The contact form opens the visitor's email application and does not submit data to a server. Clipboard features need a secure context and show fallback instructions if unavailable.
+## Make the journey yours
 
-Lighthouse 95+ is a target, not a guarantee. Automated axe checks do not replace human screen-reader testing. See `docs/VALIDATION.md` for executed checks and limitations.
+- `data/profile.json`: personal information, verified achievements, career history, projects, architecture, skills, original briefs and contact links. `data/profile.example.json` provides a minimal starting point. Remove the example's sample data before publishing.
+- `data/site.json`: name, public URL, metadata, portrait, resume, social image and default theme/motion.
+- `site.journey.heroLine`, `invitation`, `aboutLine`, `contactLine`: the opening and narrative copy.
+- `site.journey.homeIllustration`: optional local asset replacing the opening landscape.
+- `site.journey.stops`: reorder or omit destinations; edit `label`, `title` and `art`. Supported IDs: `about`, `career`, `impact`, `world`, `projects`, `skills`, `contact`. Home and Quick Profile remain available. `illustration: "assets/my-scene.svg"` replaces a destination landscape with your own local artwork. The build includes configured illustration assets.
+- `site.journey.character`: hexadecimal colors for `skin`, `hair`, `shirt`, `backpack`, and `pants`. No identity is embedded in the animation component.
+- `site.journey.palette.light` and `.dark`: scene colors for `sky`, `far`, `hill`, `ground`, `road`, `ink`, `red`, `blue`, and `paper`.
+- `site.journey.careerBuildings`, `projectArt`, `defaultProjectArt`: choose original illustration types for career/project landmarks. Types include `factory`, `studio`, `tower`, `cloud`, `vault`, `compass`, `map`, `chart`, `library`, `school`, `terminal`, `lab`, `tools`, and `mail`.
+- `site.journey.worlds`: technical destinations, their illustrations and associated skill-category names.
 
-Technology icons retain the Devicon MIT attribution: https://github.com/devicons/devicon/blob/master/LICENSE. Replace personal content before reusing; no repository-wide license has been inferred or added.
+Replace `assets/portrait.jpg`, the resume PDF, and social preview with your own assets. The resume is independently authored: changing JSON does not update the PDF. Run `node scripts/social.mjs` after changes to generate an illustrated social card (requires Chrome). Asset and link paths are validated. All professional claims must come from your own records.
+
+`PROFILE_CONFIG` and `SITE_CONFIG` optionally select alternative JSON files at build time. No secrets or environment variables are required. Earlier `sections` and `defaultView` fields are retained for compatibility in source data; the journey is now controlled by `journey.stops`, with no separate recruiter/engineering pages.
+
+## How it works
+
+- `scripts/build.mjs`: validation, build assembly, sitemap/robots output.
+- `scripts/journey.mjs`: semantic scene and field-note renderers using one shared data model.
+- `scripts/art.mjs`: original SVG scenery, landmarks, and engineer; no borrowed reference artwork.
+- `assets/portfolio.css`: illustrated world, responsive compositions, theme tokens, character gait and native-dialog presentation.
+- `assets/app.js`: native scroll tracking, short scroll-only character gait, subtle parallax, map navigation, dialogs, theme/motion controls and clipboard feedback.
+- `data/schema.ts`, `data/validate-types.ts`: configuration contracts. Frontend code remains JavaScript; configuration is TypeScript checked.
+- `tests/config.test.mjs`, `tests/journey.mjs`: configuration and real-browser regression tests.
+
+Native scrolling is deliberately retained on desktop and mobile. Unlike the reference's horizontal camera, this world follows a vertical trail; no wheel interception or touch-scroll hijacking. The environment is continuous, while each destination has a distinct illustrative identity. Native dialogs trap focus, close with Escape, and return focus to the triggering landmark. All professional notes are in the generated HTML; with JavaScript off they become readable inline after the scenes.
+
+Quick Profile is always available, including headline, experience, achievements, expertise, career details, resume and verified contact links. The site has no secure submission backend: contact uses direct email and social links, with no pretend form submission. Motion can be paused and respects the operating system preference. Offscreen scenery pauses.
+
+## GitHub Pages
+
+In Settings → Pages select **GitHub Actions**. Set `site.url` to your full Pages URL with repository path and trailing slash. Push to `main`. The workflow runs lint, configuration type checks, unit tests and build, then publishes only `dist/`. Relative URLs support repository subpaths. For a custom domain update the canonical URL and Pages settings. Repository-level `robots.txt` is supplied, though robots policy is only authoritative at a domain root.
+
+## Validation and visual evidence
+
+`npm run check` runs ESLint, TypeScript configuration checks, unit tests and production build. `npm run test:browser` checks landmarks, modal accessibility in both themes, keyboard behavior, responsive layouts, motion, map, no-JavaScript content and runtime errors. It saves desktop/mobile screenshots under ignored `artifacts/`.
+
+See `docs/JOURNEY-COMPARISON.md` for the actual browser comparison with the inspiration, and `docs/VALIDATION.md` for current results. Historical Lighthouse results in `docs/lighthouse-summary.json` describe the previous editorial design, not this illustrated redesign. No performance score is assumed to transfer between versions.
+
+Technology icons: Devicon MIT, with license in `assets/icons/LICENSE`. All journey artwork was created for this repository. No repository-wide licensing rights have been inferred; choose an explicit project license if you wish to grant reuse rights beyond forking/customization on GitHub.

@@ -1,21 +1,27 @@
-# Validation
+# Illustrated journey validation
 
-Executed locally in headless Google Chrome, November 16, 2026:
+This report applies to the illustrated journey redesign. The prior editorial portfolio's Lighthouse results do not carry over.
 
-- ESLint: passed.
-- TypeScript: configuration shape checks passed. Frontend JavaScript is syntax/lint checked, not fully type checked.
-- Node tests: 3 passed — preserved professional records, configuration customization, invalid paths/colors.
-- Production build: passed, static output in `dist/` with only deployable assets.
-- Browser regression: passed — recruiter/engineering view, architecture disclosures, saved theme, project filtering, mobile menu and Escape, deep links, reduced motion, content without JavaScript, and no runtime errors.
-- Horizontal overflow: none at widths 320, 390, 768, 1024 and 1440 pixels.
-- axe-core: zero violations in light and dark engineering views. Initial contrast findings were corrected and checks repeated.
-- Desktop screenshots inspected; responsive behavior tested automatically.
-- Assets: optimized portrait approximately 90 KB, extracted PDF approximately 130 KB. Generated HTML approximately 34 KB; no external runtime or font downloads.
+## Executed checks
 
-Limitations: no manual screen-reader audit, real iOS/Android device tests, field Core Web Vitals, or Lighthouse score guarantees. External social/project links retain the original verified account URLs; account availability may change. Email drafting requires a configured mail app. Clipboard support depends on browser permissions. Some projects have limited source information; no additional achievements or technical results were invented. The original resume PDF may differ from current website wording and must be edited separately.
+- `npm run lint`: passed.
+- `npm run typecheck`: configuration contracts passed; JavaScript frontend remains lint/syntax checked.
+- `npm test`: configuration, professional record preservation, changed identity/sections/theme, customizable character/scene artwork, and unsafe configuration rejection passed.
+- `npm run build`: passed; deployable static output in `dist/`.
+- `npm run test:browser`: passed in actual headless Google Chrome.
+- Eight scene destinations, Quick Profile, career/project/world/tool landmark dialogs, Escape, focus containment/restoration, map navigation, saved theme and no runtime errors.
+- Actual character movement and walking-limb animation while scrolling, then stopping; reduced-motion and pause behavior.
+- axe: zero violations in light/dark journey and open Quick Profile. An initial theme-button accessible-name mismatch was fixed and retested.
+- No horizontal overflow at 320, 390, 768, 1024 and 1440 CSS pixels.
+- No-script professional content and resume/contact links remain available.
+- Desktop/mobile screenshots captured in fresh browser contexts. Inspected landing, career town and project village. Mobile landing was revised to show the cabin and full character rather than cropped scenery below the fold.
 
-## Published-site verification
+## Visual comparison
 
-GitHub Actions deployment of commit `949cdc8` succeeded. The HTML, stylesheet, JavaScript, portrait, original PDF, social image, sitemap and robots file all returned HTTP 200 from the live Pages URL.
+Both live sites were inspected in a real browser before coding. See `JOURNEY-COMPARISON.md` for the observed differences and screenshot inventory. The redesign is an original vector travel atlas with warm paper, blue mountains and coral landmarks. It uses a native vertical trail rather than reproducing the reference's horizontal camera or clay-style artwork.
 
-Mobile Lighthouse on the published site: **Performance 100, Accessibility 100, Best Practices 100, SEO 100**. FCP 1.0 s, LCP 1.6 s, total blocking time 20 ms, CLS 0. Machine-readable run metadata is in `lighthouse-summary.json`. These are results from one simulated mobile lab run, not field Core Web Vitals or guaranteed scores. Remaining opportunities include image sizing, render-blocking CSS, and Pages-controlled cache lifetimes.
+Current screenshots: `artifacts/journey-desktop.png`, `journey-mobile.png`, and desktop/mobile career/project captures. These are local ignored test artifacts, not website dependencies.
+
+## Limits
+
+No manual screen-reader audit or physical iOS/Android testing. Automated accessibility testing cannot establish complete accessibility. No field Core Web Vitals are available. Illustration art is SVG authored in the repository, not copied or AI-generated raster artwork. There is no secure form submission backend, so contact links open email or verified social profiles; no form pretends to send messages. Original professional information and the resume PDF remain independently sourced; no new employers, metrics, or availability claims were invented.

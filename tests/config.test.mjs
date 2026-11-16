@@ -17,7 +17,10 @@ test("configuration changes identity, sections, theme and links", () => {
     ...s,
     displayName: "Example Engineer",
     headline: "Build better.",
-    sections: ["about", "contact"],
+    journey: {
+      ...s.journey,
+      stops: s.journey.stops.filter((x) => ["about", "contact"].includes(x.id)),
+    },
     defaultTheme: "dark",
     url: "https://example.com/",
   };
@@ -31,5 +34,48 @@ test("reject unsafe asset paths and colors", () => {
   assert.throws(() => validate(p, { ...s, resume: "../secret" }));
   assert.throws(() =>
     validate(p, { ...s, colors: { light: { blue: "red;display:none" } } }),
+  );
+});
+
+test("journey art and character remain configurable", () => {
+  const changed = {
+    ...s,
+    journey: {
+      ...s.journey,
+      character: { ...s.journey.character, shirt: "#123abc" },
+      homeIllustration: "assets/my-home.svg",
+      stops: s.journey.stops.map((x) =>
+        x.id === "about"
+          ? {
+              ...x,
+              title: "My own lookout",
+              illustration: "assets/my-lookout.svg",
+            }
+          : x,
+      ),
+    },
+  };
+  const html = render({ ...p, shortName: "Alex" }, changed);
+  assert.ok(html.includes("#123abc"));
+  assert.ok(html.includes("My own lookout"));
+  assert.ok(html.includes("assets/my-lookout.svg"));
+  assert.ok(html.includes("assets/my-home.svg"));
+  assert.ok(html.includes("Hi, I’m <em>Alex."));
+});
+test("reject unsafe scene configuration", () => {
+  assert.throws(() =>
+    render(p, {
+      ...s,
+      journey: {
+        ...s.journey,
+        stops: [{ id: "about", label: "About", illustration: "../secret.svg" }],
+      },
+    }),
+  );
+  assert.throws(() =>
+    render(p, {
+      ...s,
+      journey: { ...s.journey, character: { shirt: "red;}" } },
+    }),
   );
 });
