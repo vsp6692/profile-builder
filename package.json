@@ -10,7 +10,9 @@
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/journey.mjs && node tests/discovery-browser.mjs && node tests/guide-browser.mjs",
     "check": "npm run lint && npm run typecheck && npm test && npm run build",
-    "refresh:github": "node scripts/refresh-github.mjs"
+    "refresh:github": "node scripts/refresh-github.mjs",
+    "pdf:generate": "python3 scripts/generate_documents.py",
+    "pdf:check": "python3 scripts/check_documents.py"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",

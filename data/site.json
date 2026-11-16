@@ -193,5 +193,6 @@
       "vsp6692/profile-builder"
     ],
     "ttlHours": 24
-  }
+  },
+  "brochure": "assets/brochure.pdf"
 }

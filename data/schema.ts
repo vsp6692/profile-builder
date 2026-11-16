@@ -8,6 +8,8 @@ export interface SiteConfig {
   positioning: string;
   portrait: string;
   resume?: string;
+  /** Standalone PDF asset; does not add or alter website UI. */
+  brochure?: string;
   socialImage: string;
   /** Retained for older configurations; Quick Profile makes the journey optional. */
   defaultView?: "recruiter" | "engineering";

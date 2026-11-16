@@ -20,7 +20,9 @@ export function validate(p, s) {
     for (const c of Object.values(group))
       if (!/^#[a-f\d]{6}$/i.test(c))
         throw Error("Colors must be six-digit hex");
-  for (const asset of [s.portrait, s.resume, s.socialImage].filter(Boolean))
+  for (const asset of [s.portrait, s.resume, s.brochure, s.socialImage].filter(
+    Boolean,
+  ))
     if (!/^assets\/[\w./-]+$/.test(asset) || asset.includes(".."))
       throw Error("Use local assets/ paths");
   for (const link of [
@@ -196,6 +198,7 @@ export function build(
   for (const a of [
     s.portrait,
     s.resume,
+    s.brochure,
     s.socialImage,
     ...[
       s.journey.homeIllustration,

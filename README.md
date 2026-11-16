@@ -36,7 +36,7 @@ The builder replaces `dist/` on every build so removed assets do not remain in t
 - `site.journey.careerBuildings`, `projectArt`, `defaultProjectArt`: choose original illustration types for career/project landmarks. Key `projectArt` by a project's stable `id`; legacy project-name keys remain a fallback. Types include `factory`, `studio`, `tower`, `cloud`, `vault`, `compass`, `map`, `chart`, `library`, `school`, `terminal`, `lab`, `tools`, and `mail`.
 - `site.journey.worlds`: technical destinations, artwork, associated skill categories and `architectureIds` for the systems visitors can explore there.
 
-Replace the example SVG portrait and social image with your own portrait and a shareable social card before publishing. The paired example deliberately omits `site.resume`, so no resume link or personal PDF is copied. When your resume is ready, add `"resume": "assets/my-resume.pdf"` to the site configuration and set `profile.resume.filename` to its download name. Changing JSON does not update the PDF itself. After updating the default `data/profile.json` and `data/site.json`, `node scripts/social.mjs` generates an illustrated social card (requires Chrome; use a PNG path for `socialImage`). Asset and link paths are validated. All professional claims must come from your own records.
+Replace the example SVG portrait and social image with your own portrait and a shareable social card before publishing. The paired example deliberately omits `site.resume`, so no resume link or personal PDF is copied. When your resume is ready, add `"resume": "assets/my-resume.pdf"` to the site configuration and set `profile.resume.filename` to its download name. Changing JSON does not update the PDF automatically; use the document workflow below or supply your own PDF. After updating the default `data/profile.json` and `data/site.json`, `node scripts/social.mjs` generates an illustrated social card (requires Chrome; use a PNG path for `socialImage`). Asset and link paths are validated. All professional claims must come from your own records.
 
 `PROFILE_CONFIG` and `SITE_CONFIG` optionally select alternative JSON files at build time. Use the examples as a **pair** so their IDs, metadata and assets match:
 
@@ -46,6 +46,42 @@ python3 -m http.server 4173 --directory dist
 ```
 
 This builds the example into `dist/` and regenerates the root `index.html`; `npm run build` restores the default profile. For your fork, copy and customize both example configurations, then replace both default JSON files or supply both paths during deployment. Change the public URL, name, hero, contact, metadata, portrait and social card before publishing. No environment variables are required when using the default paths.
+
+## Resume and engineering brochure
+
+`scripts/generate_documents.py` creates two standalone A4 PDFs without rendering or changing the website UI. It joins identity, contacts, career headings, achievements and projects from `data/profile.json` with the detailed document content in `data/documents.json`. The latter preserves responsibilities and education dates from the original resume and controls the brochure's selected architecture stories. Update both files for your fork; never publish the supplied professional records as your own.
+
+Install Python dependencies in an isolated environment. Poppler is also required for validation and page rendering (`brew install poppler` on macOS, or `sudo apt-get install poppler-utils` on Debian/Ubuntu):
+
+```sh
+python3 -m venv .venv-documents
+source .venv-documents/bin/activate
+python3 -m pip install -r scripts/requirements-documents.txt
+npm run pdf:generate
+npm run pdf:check -- --output artifacts/pdf-review/validation.json
+```
+
+The generator writes `output/pdf/<resume-filename-stem>_Resume.pdf` and `output/pdf/<resume-filename-stem>_Brochure.pdf`. It reads the default `data/profile.json`, `data/site.json` and `data/documents.json`; the website's `PROFILE_CONFIG` and `SITE_CONFIG` overrides do not apply to this standalone generator. `--output` selects another output directory.
+
+Render **every page** and visually inspect the PNGs after changing content or layout. The checker verifies metadata, embedded fonts, selectable text, source coverage, A4 bounds, links and tag relationships; it cannot replace visual review or guarantee compatibility with every ATS or PDF reader. For the supplied profile:
+
+```sh
+mkdir -p artifacts/pdf-review/rendered
+pdftoppm -scale-to 1600 -png output/pdf/Satheesh_Prabhakaran_Resume.pdf artifacts/pdf-review/rendered/resume
+pdftoppm -scale-to 1600 -png output/pdf/Satheesh_Prabhakaran_Brochure.pdf artifacts/pdf-review/rendered/brochure
+```
+
+To install reviewed files into the website assets and validate the production build:
+
+```sh
+npm run pdf:generate -- --install
+npm run pdf:check
+npm run check
+```
+
+`--install` copies the resume to `site.resume` and the brochure to `site.brochure` (falling back to `assets/brochure.pdf` when omitted). Configure the optional `"brochure": "assets/brochure.pdf"` field to include that file in the Pages build. This copies a downloadable asset; it does not add or change website controls. The existing resume CTA continues using `site.resume`. With the supplied configuration, the deployed files are `assets/resume.pdf` and `assets/brochure.pdf` relative to the site's root.
+
+The normal Node build and Pages workflow copy checked-in PDFs; they do not install Python or regenerate documents. Commit reviewed asset changes before deploying. See [the PDF review](docs/PDF-REVIEW.md) for the executed audit, before/after evidence and remaining validation limits.
 
 ## Structured stories and relationships
 

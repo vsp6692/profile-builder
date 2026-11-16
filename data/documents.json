@@ -1,0 +1,250 @@
+{
+  "source": {
+    "description": "Document content transcribed and lightly condensed from the original four-page Google Docs resume. Current identity, contacts, employment headings and selected projects are joined from data/profile.json. Growth stages describe organizational development, not headcounts.",
+    "sha256": "2e407d4eeb7a1e1792941fef3c7b020e7a46877c301c56fa7bdcb02be2a02fba",
+    "originalPdf": "artifacts/pdf-review/before/resume.pdf",
+    "originalText": "artifacts/pdf-review/before/resume.txt",
+    "profile": "data/profile.json",
+    "gitSource": "e7f4643:assets/resume.pdf"
+  },
+  "resume": {
+    "summary": "DevSecOps and platform engineering leader with 13+ years designing, building and scaling cloud-native platforms across AWS, Azure and GCP. Led DevOps transformations, Kubernetes and GitOps adoption, secure automated CI/CD, and cloud optimization delivering $1M+ in annual savings. Founding engineering member through the 0 to 1, 1 to 10 and 10 to 100 growth stages, connecting platform engineering, infrastructure as code, security and developer experience to reliability, automation and business outcomes.",
+    "skills": [
+      {
+        "label": "Cloud",
+        "items": ["AWS", "Azure", "GCP", "OpenStack", "Alibaba", "DigitalOcean"]
+      },
+      {
+        "label": "Containers & GitOps",
+        "items": [
+          "Kubernetes (EKS, AKS, GKE, K3s, k3k)",
+          "Helm",
+          "KEDA",
+          "Argo CD",
+          "Argo Rollouts",
+          "Argo Events",
+          "Argo Workflows",
+          "Istio",
+          "Kamaji",
+          "Gardener",
+          "Docker"
+        ]
+      },
+      {
+        "label": "Infrastructure as Code & Configuration",
+        "items": [
+          "Terraform",
+          "Crossplane (XRDs)",
+          "Ansible",
+          "Puppet",
+          "Packer"
+        ]
+      },
+      {
+        "label": "CI/CD & Source Control",
+        "items": [
+          "GitHub Actions (self-hosted and Kubernetes runners)",
+          "GitLab CI/CD",
+          "Jenkins",
+          "Azure DevOps",
+          "Bamboo",
+          "SonarQube",
+          "GitHub",
+          "GitLab",
+          "Bitbucket"
+        ]
+      },
+      {
+        "label": "Observability & Incident Management",
+        "items": [
+          "Datadog",
+          "Sentry",
+          "PagerDuty",
+          "OpenTelemetry",
+          "Prometheus",
+          "Thanos",
+          "Grafana",
+          "ClickHouse",
+          "ELK",
+          "Power BI"
+        ]
+      },
+      {
+        "label": "Security & Edge",
+        "items": [
+          "Cloudflare (Zero Trust, Workers, DNS)",
+          "Prowler",
+          "GuardDuty",
+          "Inspector",
+          "Dependabot",
+          "Sprinto",
+          "Kong",
+          "Ory",
+          "Google SSO"
+        ]
+      },
+      {
+        "label": "Languages & Operating Systems",
+        "items": [
+          "Python (Flask)",
+          "TypeScript",
+          "Bash",
+          "Groovy",
+          "Linux",
+          "Windows"
+        ]
+      }
+    ],
+    "roles": [
+      {
+        "careerId": "lyric",
+        "groups": [
+          {
+            "label": "Platform & Developer Experience",
+            "bullets": [
+              "Founding engineering member leading platform engineering, DevSecOps and cloud strategy through the 0 to 1, 1 to 10 and 10 to 100 growth stages.",
+              "Designed and implemented an Internal Developer Platform (IDP) for self-service infrastructure, standardized CI/CD and reusable services. Built internal CLI tooling and self-service workflows to standardize local development and improve Developer Experience (DevEx).",
+              "Built local-development, per-change k3s/k3k preview environments for an AI-agent workflow: capture an issue, apply a fix, raise a pull request, run automated tests, then human review and production rollout.",
+              "Architected AWS, Azure and GCP infrastructure with Terraform, Kubernetes, Helm and Crossplane for cloud-agnostic provisioning; used Kamaji and Gardener for multi-tenant Kubernetes.",
+              "Authored reusable Terraform with peer-reviewed plans and blast-radius checks for production-critical changes; later adopted Crossplane XRDs for a Kubernetes-native, self-service infrastructure API."
+            ]
+          },
+          {
+            "label": "Reliability & Observability",
+            "bullets": [
+              "Owned production Kubernetes reliability on Amazon EKS: on-call rotations, incident response, Root Cause Analysis (RCA) and postmortems to closure.",
+              "Improved scalability and reliability with Cluster Autoscaler, Horizontal Pod Autoscaler (HPA), capacity planning and Kubernetes platform optimization.",
+              "Built enterprise observability with OpenTelemetry, Prometheus, Thanos, Grafana and ClickHouse; added Datadog and Sentry for correlated logs, traces and errors in incident triage.",
+              "Established Site Reliability Engineering (SRE): SLIs, SLOs, runbooks and incident processes, with PagerDuty alerting and escalation for critical production systems."
+            ]
+          },
+          {
+            "label": "Delivery & Automation",
+            "bullets": [
+              "Established organization-wide GitOps with Argo CD, ApplicationSets, App-of-Apps and Argo Rollouts, implementing canary, blue/green and progressive delivery for safer releases.",
+              "Built scalable GitHub Actions and GitLab CI platforms with self-hosted and Kubernetes regression runners; led the GitLab to GitHub migration to improve security, governance and developer experience.",
+              "Developed Python (Flask) and TypeScript platform automation and backend services to streamline workflows; championed AI-assisted development and automation to improve productivity, accelerate delivery and reduce manual effort."
+            ]
+          },
+          {
+            "label": "Cost & FinOps",
+            "bullets": [
+              "Delivered $1M+ in annual cloud savings through FinOps, infrastructure optimization, workload rightsizing and migration of production workloads from AMD64 to ARM64.",
+              "Built a centralized AWS, Azure and GCP FinOps dashboard for real-time spend, utilization, forecasting and optimization visibility; established cloud governance standards."
+            ]
+          },
+          {
+            "label": "Security & Compliance",
+            "bullets": [
+              "Served as Security Lead for ISO 27001 and SOC 2 compliance through DevSecOps, infrastructure hardening, secure SDLC, automated vulnerability management and continuous VAPT.",
+              "Implemented continuous monitoring with GitHub Dependabot, AWS GuardDuty, AWS Inspector and Sprinto; integrated security findings into engineering workflows.",
+              "Designed Google SSO identity and access management; strengthened Cloudflare Zero Trust, DNS and edge security; deployed lightweight sites and pages on Cloudflare Workers."
+            ]
+          }
+        ]
+      },
+      {
+        "careerId": "kla",
+        "groups": [
+          {
+            "label": "DevOps Transformation & Automation",
+            "bullets": [
+              "Led the DevOps transformation from legacy monolithic deployments to CI/CD and automation; administered and optimized Jenkins, Azure DevOps, SonarQube, JFrog and GitHub for multiple engineering teams.",
+              "Automated infrastructure provisioning and configuration with Puppet and Ansible; managed Nutanix infrastructure orchestrated through Morpheus.",
+              "Designed scalable Jenkins and Azure DevOps pipelines and reusable Jenkins Shared Libraries in Groovy to standardize delivery across teams.",
+              "Migrated source repositories from IBM RTC to GitHub and Azure Repos, improving collaboration and version control.",
+              "Implemented end-to-end Prometheus and Grafana monitoring; built Power BI dashboards with CI/CD metrics and pipeline insights for engineering leadership.",
+              "Developed Python and Flask automation services to streamline DevOps workflows, reduce manual effort and accelerate delivery."
+            ]
+          }
+        ]
+      },
+      {
+        "careerId": "thoughtworks",
+        "groups": [
+          {
+            "label": "Deltatre",
+            "dates": "April 2018 - March 2019",
+            "bullets": [
+              "Led migration from .NET Framework to .NET Core and from monolithic services to microservices; deployed Docker and Kubernetes across self-hosted and Azure Kubernetes environments.",
+              "Built TFS/VSTS CI/CD pipelines for QA, UAT, staging and production Kubernetes clusters; standardized deployments with Helm charts and TFS build/release pipelines.",
+              "Implemented secure SSL certificate and secret management with Blackbox."
+            ]
+          },
+          {
+            "label": "Retail Project",
+            "dates": "August 2017 - April 2018",
+            "bullets": [
+              "Managed and optimized Jenkins and GoCD pipelines for reliable delivery; automated Windows application deployments on AWS and led the AWS to Azure migration with minimal downtime.",
+              "Built Terraform modules and Packer golden images to automate Azure provisioning and significantly reduce provisioning time."
+            ]
+          }
+        ],
+        "where": "Chennai, India | Remote"
+      },
+      {
+        "careerId": "tcs",
+        "groups": [
+          {
+            "label": "Comcast",
+            "dates": "October 2013 - August 2017",
+            "bullets": [
+              "Built and managed scalable Software-Defined Networking (SDN) environments for Versa Controllers.",
+              "Deployed and automated an OpenStack private cloud with Ansible; contributed to OpenStack and Ansible open-source projects.",
+              "Developed Python tools for SDN Controller deployment and end-to-end orchestration testing, applying DevOps to automated SDN infrastructure deployment.",
+              "Managed Ceph storage clusters, implemented High Availability for OpenStack, and deployed monitoring with Nagios, Zenoss, ELK Stack and Syslog."
+            ]
+          }
+        ]
+      }
+    ],
+    "educationDetails": [
+      {
+        "school": "Government College of Technology",
+        "dates": "August 2009 - April 2013"
+      }
+    ],
+    "featuredProductIds": ["secretmesh-product"],
+    "friendlyHelpProjectIds": ["literature-overlap"],
+    "additionalSkillCategories": ["Automation & Development", "Databases"]
+  },
+  "brochure": {
+    "impactId": "cloud-savings",
+    "metrics": [
+      {
+        "achievementId": "cloud-savings",
+        "label": "Annual cloud savings"
+      },
+      {
+        "achievementId": "engineering-experience",
+        "label": "Years of engineering"
+      },
+      {
+        "achievementId": "multi-cloud",
+        "valueSuffix": " clouds",
+        "label": "AWS | Azure | GCP"
+      }
+    ],
+    "sections": [
+      {
+        "architectureId": "developer-platform",
+        "heading": "01 / Developer platforms & GitOps",
+        "diagramLabels": ["Change", "Argo CD", "k3s / k3k preview"],
+        "flow": true
+      },
+      {
+        "architectureId": "secretmesh-architecture",
+        "heading": "02 / SecretMesh",
+        "diagramLabels": ["Governance", "Native cloud vaults"],
+        "projectId": "secretmesh",
+        "linkLabel": "Explore SecretMesh on GitHub"
+      },
+      {
+        "architectureId": "literature-platform",
+        "heading": "03 / LitOverLap - friendly help",
+        "diagramLabels": ["Web + API", "Orchestrator", "Qdrant + Neo4j"],
+        "note": "Three GCP VMs | Private networking | IAP-only SSH"
+      }
+    ]
+  }
+}

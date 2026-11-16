@@ -4,3 +4,6 @@ dist/
 playwright-report/
 test-results/
 artifacts/
+output/pdf/
+.venv-documents/
+__pycache__/
