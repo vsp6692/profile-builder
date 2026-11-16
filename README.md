@@ -58,3 +58,5 @@ In Settings → Pages select **GitHub Actions**. Set `site.url` to your full Pag
 See `docs/JOURNEY-COMPARISON.md` for the actual browser comparison with the inspiration, and `docs/VALIDATION.md` for current results. Historical Lighthouse results in `docs/lighthouse-summary.json` describe the previous editorial design, not this illustrated redesign. No performance score is assumed to transfer between versions.
 
 Technology icons: Devicon MIT, with license in `assets/icons/LICENSE`. All journey artwork was created for this repository. No repository-wide licensing rights have been inferred; choose an explicit project license if you wish to grant reuse rights beyond forking/customization on GitHub.
+
+The published illustrated redesign has its own fresh mobile audit in `docs/journey-lighthouse-summary.json`; see the validation report for measured results and limitations.

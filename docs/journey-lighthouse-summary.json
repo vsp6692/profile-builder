@@ -1,0 +1,28 @@
+{
+  "url": "https://vsp6692.github.io/profile-builder/",
+  "date": "2026-11-16T04:36:15.511Z",
+  "lighthouseVersion": "13.6.0",
+  "formFactor": "mobile",
+  "throttlingMethod": "simulate",
+  "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 975.9,
+      "display": "1.0 s"
+    },
+    "total-blocking-time": {
+      "value": 0,
+      "display": "0 ms"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "display": "0"
+    }
+  },
+  "note": "Single mobile lab run of the illustrated journey, not field Core Web Vitals or guaranteed scores."
+}

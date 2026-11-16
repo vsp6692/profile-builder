@@ -25,3 +25,11 @@ Current screenshots: `artifacts/journey-desktop.png`, `journey-mobile.png`, and 
 ## Limits
 
 No manual screen-reader audit or physical iOS/Android testing. Automated accessibility testing cannot establish complete accessibility. No field Core Web Vitals are available. Illustration art is SVG authored in the repository, not copied or AI-generated raster artwork. There is no secure form submission backend, so contact links open email or verified social profiles; no form pretends to send messages. Original professional information and the resume PDF remain independently sourced; no new employers, metrics, or availability claims were invented.
+
+## Published illustrated journey
+
+Deployment of `eeeeb4f` succeeded on GitHub Pages. A live Chrome check confirmed eight scenes, Quick Profile, the journey CTA, the walking companion, and no runtime errors.
+
+Fresh mobile Lighthouse: **Performance 100, Accessibility 100, Best Practices 100, SEO 100**. LCP 1.0 s, total blocking time 0 ms, CLS 0. See `journey-lighthouse-summary.json` for the run metadata. This is one simulated mobile lab run, not a guarantee for all devices or networks. Remaining audit opportunities include cache lifetimes, render-blocking CSS, and a small forced layout measurement during scroll initialization.
+
+An alternate production build with a different identity, omitted journey stops and replacement artwork also passed. Default personal portrait assets are not copied when a fork configures different files.
